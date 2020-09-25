@@ -1,0 +1,24 @@
+typedef long long int ll;
+typedef unsigned long long int ull;
+ull Number_Reverse(ull Number);
+bool isPalindrome(int x){
+    ll Copy = x;
+    bool Palindrome = false; 
+    if(x < 0){
+       Palindrome = false; 
+    }else{
+       Copy = Number_Reverse(Copy);
+       if(Copy == x){
+          Palindrome = true;  
+       } 
+    }
+    return Palindrome; 
+}
+ull Number_Reverse(ull Number){
+    ull Rversed_Number = 0;
+    do{
+       Rversed_Number = 10 * Rversed_Number + Number % 10; 
+       Number /= 10; 
+    }while(Number);
+    return Rversed_Number; 
+}
